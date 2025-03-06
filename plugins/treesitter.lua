@@ -1,5 +1,3 @@
--- Customize Treesitter
-
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
@@ -8,7 +6,14 @@ return {
       "lua",
       "vim",
       "cpp",
+      "python",
       -- add more arguments for adding more treesitter parsers
+    },
+    highlight = {
+      enable = true,
+    },
+    indent = {
+      enable = true,
     },
   },
 }
