@@ -36,7 +36,8 @@ return {
       -- first key is the mode
       n = {
         -- second key is the lefthand side of the map
-        ["<C-n>"] = { ":Neotree  filesystem reveal left toggle=true<CR>" },
+        ["<C-n>"] = { "<Cmd>Neotree toggle<CR>", desc = "Toggle Terminal" },
+        ["<C-t>"] = { "<Cmd>ToggleTerm size=90 direction=vertical<CR>" },
         -- navigate buffer tabs
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
@@ -50,13 +51,16 @@ return {
           end,
           desc = "Close buffer from tabline",
         },
+      },
 
-        -- tables with just a `desc` key will be registered with which-key if it's installed
-        -- this is useful for naming menus
-        -- ["<Leader>b"] = { desc = "Buffers" },
+      t = {
 
-        -- setting a mapping to false will disable it
-        -- ["<C-S>"] = false,
+        ["<C-t>"] = { "<Cmd>ToggleTerm<CR>", desc = "Toggle terminal" },
+      },
+
+      i = {
+
+        ["<C-t>"] = { "<Esc><Cmd>ToggleTerm<CR>", desc = "Toggle terminal" },
       },
     },
   },
