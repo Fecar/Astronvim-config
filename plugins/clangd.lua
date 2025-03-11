@@ -2,11 +2,14 @@ return {
   {
     "AstroNvim/astrolsp",
     ---@type AstroLSPOpts
-    opts = {
+    settings = {
       config = {
         clangd = {
           capabilities = {
             offsetEncoding = "utf-8",
+          },
+          formatting = {
+            MaxLineWidth = 120,
           },
         },
       },
