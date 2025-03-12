@@ -26,7 +26,8 @@ return {
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
       },
-      g = { -- vim.g.<key>
+      g = {
+        -- vim.g.<key>
         -- configure global vim variables (vim.g)
         -- This can be found in the `lua/lazy_setup.lua` file
       },
@@ -36,8 +37,9 @@ return {
       -- first key is the mode
       n = {
         -- second key is the lefthand side of the map
-        ["<C-n>"] = { "<Cmd>Neotree toggle<CR>", desc = "Toggle Terminal" },
-        ["<C-t>"] = { "<Cmd>ToggleTerm size=90 direction=vertical<CR>" },
+        ["<C-c>"] = { '<Cmd>"+y<CR>', desc = "Copy to clipboard" },
+        ["<C-n>"] = { "<Cmd>Neotree toggle<CR>", desc = "Toggle Explorer" },
+        ["<C-t>"] = { "<Cmd>ToggleTerm size=90 direction=vertical<CR>", desc = "Toggle Terminal" },
         -- navigate buffer tabs
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
@@ -61,6 +63,11 @@ return {
       i = {
 
         ["<C-t>"] = { "<Esc><Cmd>ToggleTerm<CR>", desc = "Toggle terminal" },
+      },
+
+      v = {
+
+        ["<C-y>"] = { '<Cmd>"+y<CR><CR>', desc = "Copy to clipboard" },
       },
     },
   },
