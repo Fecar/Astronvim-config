@@ -37,7 +37,6 @@ return {
       -- first key is the mode
       n = {
         -- second key is the lefthand side of the map
-        ["<C-c>"] = { '<Cmd>"+y<CR>', desc = "Copy to clipboard" },
         ["<C-n>"] = { "<Cmd>Neotree toggle<CR>", desc = "Toggle Explorer" },
         ["<C-t>"] = { "<Cmd>ToggleTerm size=90 direction=vertical<CR>", desc = "Toggle Terminal" },
         -- navigate buffer tabs
@@ -65,10 +64,7 @@ return {
         ["<C-t>"] = { "<Esc><Cmd>ToggleTerm<CR>", desc = "Toggle terminal" },
       },
 
-      v = {
-
-        ["<C-y>"] = { '<Cmd>"+y<CR><CR>', desc = "Copy to clipboard" },
-      },
+      v = {},
     },
   },
 }
